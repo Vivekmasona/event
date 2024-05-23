@@ -4,122 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
-    <link rel="stylesheet" href="calendar/style.css"> <!-- Link to your CSS file -->
-    <script src="calender/js/index.js" defer></script> 
-    <script src="time/index.js" defer></script> 
-    <script src="header/index.js" defer></script> 
-    
-    
-    
-    <!-- Link to your JavaScript file -->
-    <link rel="stylesheet" href="Login/style.css"> 
-    <link rel="stylesheet" href="calender/style.css"> 
-    <link rel="stylesheet" href="header/style.css"> 
-    <link rel="stylesheet" href="footer/style.css"> 
-    <!-- Link to your CSS file -->
-    <script src="Login/index.js" defer></script> <!-- Link to your JavaScript file -->
-
-
+    <!-- Link to your CSS files -->
+    <link rel="stylesheet" href="calendar/style.css">
+    <link rel="stylesheet" href="Login/style.css">
+    <link rel="stylesheet" href="header/style.css">
+    <link rel="stylesheet" href="footer/style.css">
+    <!-- Link to your JavaScript files -->
+    <script src="calendar/js/index.js" defer></script>
+    <script src="time/index.js" defer></script>
+    <script src="header/index.js" defer></script>
+    <script src="Login/index.js" defer></script>
 </head>
 <body>
-
-  <div class="container">
-  	<div class="container">
-    <div class="calendar">
-      <div class="header-top">
-      	
-      
-      
-        <i class ="fa fa-calendar"   style="font-size:30px;color:white"></i>
-  <b class="btn today">
-<i class="fa fa-refresh fa-spin" style="font-size:24px"></i></b>
-
-        <div class="time" id="currentTime"></div>
-      </div>
-  <div class="header">
-        <div class="btn prev">
-          <i class="fa fa-angle-double-left" style="font-size:48px;color:black"></i>
+    <div class="container">
+        <div class="calendar">
+            <div class="header-top">
+                <i class="fa fa-calendar" style="font-size:30px;color:white"></i>
+                <b class="btn today"><i class="fa fa-refresh fa-spin" style="font-size:24px"></i></b>
+                <div class="time" id="currentTime"></div>
+            </div>
+            <div class="header">
+                <div class="btn prev">
+                    <i class="fa fa-angle-double-left" style="font-size:48px;color:black"></i>
+                </div>
+                <div class="month">July 2021</div>
+                <div class="btn next">
+                    <i class="fa fa-angle-double-right" style="font-size:48px;color:black"></i>
+                </div>
+            </div>
+            <div id="taskModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Task</h2>
+                    <input type="text" id="taskInput" placeholder="Enter your task" />
+                    <button id="saveTaskBtn">Save</button>
+                    <button id="deleteTaskBtn">Delete</button>
+                </div>
+            </div>
+            <div id="displayTaskModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h6>Event</h6>
+                    <p id="taskDetails"></p>
+                </div>
+            </div>
+            <div class="weekdays">
+                <div class="day">Sun</div>
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+                <div class="day">Sat</div>
+            </div>
+            <div class="days">
+                <!-- Render days with JS -->
+            </div>
         </div>
-        <div class="month">July 2021</div>
-        <div class="btn next">
-          <i class="fa fa-angle-double-right" style="font-size:48px;color:black"></i>
-        </div>
-      </div>
-    
-      
-            
-      
-
-      <div id="taskModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h2>Task</h2>
-          <input type="text" id="taskInput" placeholder="Enter your task" />
-          <button id="saveTaskBtn">Save </button>
-          <button id="deleteTaskBtn">Delete </button>
-        </div>
-      </div>
-
-      <div id="displayTaskModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <h6>Event</h6>
-          <p id="taskDetails"></p>
-        </div>
-      </div>
-
-      <div class="weekdays">
-        <div class="day">Sun</div>
-        <div class="day">Mon</div>
-        <div class="day">Tue</div>
-        <div class="day">Wed</div>
-        <div class="day">Thu</div>
-        <div class="day">Fri</div>
-        <div class="day">Sat</div>
-      </div>
-      <div class="days">
-        <!-- render days with js -->
-      </div>
     </div>
-  </div>
-  </div>
 </body>
 <footer>
-<svg viewbox="0 0 120 28">
- <defs> 
-    <filter id="goo">
-      <fegaussianblur in="SourceGraphic" stddeviation="1" result="blur" />
-      <fecolormatrix in="blur" mode="matrix" values="
-           1 0 0 0 0  
-           0 1 0 0 0  
-           0 0 1 0 0  
-           0 0 0 13 -9" result="goo" />
-      <xfeblend in="SourceGraphic" in2="goo" />
-  	</xfeblend></fecolormatrix></fegaussianblur></filter>
-     <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
-  </path></defs> 
-
-   <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2" ></use> 
-   <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0" ></use>
- 
- 
-  <g class="gooeff" filter="url(#goo)">
-  
-  <circle class="drop drop1" cx="1.2" cy="5.4" r="8.8"  />
-  <circle class="drop drop2" cx="5.2" cy="5.1" r="7.5"  />
-  <circle class="drop drop3" cx="10.2" cy="5.3" r="9.2"  />
-    <circle class="drop drop4" cx="3.2" cy="5.4" r="8.8"  />
-  <circle class="drop drop5" cx="14.2" cy="5.1" r="7.5"  />
-  <circle class="drop drop6" cx="17.2" cy="4.8" r="9.2"  />
-  <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1" />
- </use></circle></circle></circle></circle></circle></circle></g>  
-    <!-- g mask="url(#xxx)">
-    <path   id="wave1"  class="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
-    </g>
-  </g -->
-
-</svg>
-
-  
+    <svg viewbox="0 0 120 28">
+        <defs>
+            <filter id="goo">
+                <fegaussianblur in="SourceGraphic" stddeviation="1" result="blur" />
+                <fecolormatrix in="blur" mode="matrix" values="
+                    1 0 0 0 0  
+                    0 1 0 0 0  
+                    0 0 1 0 0  
+                    0 0 0 13 -9" result="goo" />
+                <xfeblend in="SourceGraphic" in2="goo" />
+            </filter>
+            <path id="wave" d="M 0,10 C 30,10 30,15 60,15 90,15 90,10 120,10 150,10 150,15 180,15 210,15 210,10 240,10 v 28 h -240 z" />
+        </defs>
+        <use id="wave3" class="wave" xlink:href="#wave" x="0" y="-2"></use>
+        <use id="wave2" class="wave" xlink:href="#wave" x="0" y="0"></use>
+        <g class="gooeff" filter="url(#goo)">
+            <circle class="drop drop1" cx="1.2" cy="5.4" r="8.8"></circle>
+            <circle class="drop drop2" cx="5.2" cy="5.1" r="7.5"></circle>
+            <circle class="drop drop3" cx="10.2" cy="5.3" r="9.2"></circle>
+            <circle class="drop drop4" cx="3.2" cy="5.4" r="8.8"></circle>
+            <circle class="drop drop5" cx="14.2" cy="5.1" r="7.5"></circle>
+            <circle class="drop drop6" cx="17.2" cy="4.8" r="9.2"></circle>
+            <use id="wave1" class="wave" xlink:href="#wave" x="0" y="1"></use>
+        </g>
+    </svg>
 </footer>
-    
+</html>
+
