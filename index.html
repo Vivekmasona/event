@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="calendar.css" />
+  <script src="calendar.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
+
+
+  <div class="container">
+  	<div class="container">
+    <div class="calendar">
+      <div class="header-top">
+      	
+      
+      
+        <i class ="fa fa-calendar"   style="font-size:30px;color:white"></i>
+  <b class="btn today">
+<i class="fa fa-refresh fa-spin" style="font-size:24px"></i></b>
+
+        <div class="time" id="currentTime"></div>
+      </div>
+  <div class="header">
+        <div class="btn prev">
+          <i class="fa fa-angle-double-left" style="font-size:48px;color:black"></i>
+        </div>
+        <div class="month">July 2021</div>
+        <div class="btn next">
+          <i class="fa fa-angle-double-right" style="font-size:48px;color:black"></i>
+        </div>
+      </div>
+    
+      
+            
+      
+
+      <div id="taskModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Task</h2>
+          <input type="text" id="taskInput" placeholder="Enter your task" />
+          <button id="saveTaskBtn">Save </button>
+          <button id="deleteTaskBtn">Delete </button>
+        </div>
+      </div>
+
+      <div id="displayTaskModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h6>Event</h6>
+          <p id="taskDetails"></p>
+        </div>
+      </div>
+
+      <div class="weekdays">
+        <div class="day">Sun</div>
+        <div class="day">Mon</div>
+        <div class="day">Tue</div>
+        <div class="day">Wed</div>
+        <div class="day">Thu</div>
+        <div class="day">Fri</div>
+        <div class="day">Sat</div>
+      </div>
+      <div class="days">
+        <!-- render days with js -->
+      </div>
+    </div>
+  </div>
+
