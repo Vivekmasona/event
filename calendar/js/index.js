@@ -11,8 +11,8 @@ const saveTaskBtn = document.getElementById("saveTaskBtn");
 const taskDetails = document.getElementById("taskDetails");
 
 const months = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
+  "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+  "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"
 ];
 
 // Load events from local storage or use an empty object if there are none
@@ -143,34 +143,6 @@ saveTaskBtn.addEventListener("click", () => {
   }
 });
 
-nextBtn.addEventListener("click", () => {
-  currentMonth++;
-  if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
-  }
-  daysContainer.style.transform = "translateX(-100%)";
-  setTimeout(() => {
-    renderCalendar();
-    daysContainer.style.transform = "translateX(0)";
-  }, 300); // 300 milliseconds ka delay rakha hai, adjust kar sakte hain agar chahiye
-});
-
-prevBtn.addEventListener("click", () => {
-  currentMonth--;
-  if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
-  }
-  daysContainer.style.transform = "translateX(100%)";
-  setTimeout(() => {
-    renderCalendar();
-    daysContainer.style.transform = "translateX(0)";
-  }, 300); // 300 milliseconds ka delay rakha hai, adjust kar sakte hain agar chahiye
-});
-
-
-
 const deleteTaskBtn = document.getElementById("deleteTaskBtn");
 
 deleteTaskBtn.addEventListener("click", () => {
@@ -211,6 +183,5 @@ events["2024-10-13"] = "Dussehra";
 events["2024-10-27"] = "Diwali";
 events["2024-11-12"] = "Guru Nanak Jayanti";
 events["2024-12-25"] = "Christmas";
-
 
 renderCalendar();
